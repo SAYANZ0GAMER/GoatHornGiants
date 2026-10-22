@@ -1,0 +1,33 @@
+# GoatHornGiants configuration
+
+# Delay between horn use and the lightning strike / transformation (20 ticks = 1 second).
+# The specification asks for exactly 4 seconds = 80 ticks.
+transformation-delay-ticks: 80
+
+# Max zombies processed per tick when the delay expires (keeps big chunks from lagging the tick).
+batch-size: 8
+
+giant:
+  # Keep Giants loaded and prevent despawning when no player is near.
+  persistent: true
+  # Giants are 12 blocks tall; in caves/buildings their head would be inside blocks.
+  # true = ignore suffocation damage for Giants made by this plugin.
+  suffocation-immune: true
+  # Targeting/pathing update interval in ticks (applied on start/reload).
+  ai-interval-ticks: 5
+  # How far (blocks) a Giant looks for players.
+  detection-range: 32.0
+  # Multiplier on the Giant's walking speed (vanilla Giant base speed is 0.5).
+  movement-speed-multiplier: 1.0
+  # Creative/spectator players cannot be hurt, so by default Giants ignore them.
+  target-creative-and-spectator: false
+
+attack:
+  damage: 12.0           # half-hearts (12 = 6 hearts before armor)
+  reach: 6.0             # horizontal distance (blocks) from the Giant's centre
+  cooldown-ticks: 20     # ticks between attacks
+
+protection:
+  # Projectiles shot by the creator (arrows, tridents...) also count as "attacking" the Giant.
+  projectiles-remove-protection: true
+  notify-creator: true

@@ -1,0 +1,19 @@
+name: GoatHornGiants
+version: '${project.version}'
+main: com.example.goathorngiants.GoatHornGiantsPlugin
+api-version: '26.3'
+description: Use the "Call" goat horn to turn zombies in your chunk into Giants.
+author: YourName
+commands:
+  goathorngiants:
+    description: Admin command for GoatHornGiants
+    usage: /<command> reload
+    aliases: [hgiants]
+    permission: goathorngiants.admin
+permissions:
+  goathorngiants.use:
+    description: Allows the Call goat horn to trigger the transformation
+    default: true
+  goathorngiants.admin:
+    description: Allows /goathorngiants reload
+    default: op
